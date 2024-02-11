@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Corrida</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .btn {
+            font-size: 12px;
+            padding: 10px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #calendar,
+        #agendamento,
+        #maps,
+        #whatsapp {
+            display: none;
+            text-align: center;
+        }
+
+        #calendar {
+            width: 100%;
+            height: 50px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        #agendamento input[type="text"] {
+            font-size: 16px;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+        }
+
+        #agendarBtn {
+            font-size: 16px;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Escolha uma das opções abaixo:</p>
+    <ul>
+        <li><button class="btn" onclick="mostrarSecao('calendar')">Agendar Corrida</button></li>
+        <li><button class="btn" onclick="mostrarSecao('maps')">Chamar motorista pela 1ª vez</button></li>
+        <li><button class="btn" onclick="mostrarSecao('whatsapp')">Venha me buscar</button></li>
+    </ul>
+
+    <!-- Código para o Calendário e Agendamento -->
+    <div id="calendar">Calendário Atualizado</div>
+
+    <div id="agendamento">
+        <input type="text" id="dataSelecionada" readonly>
+        <br>
+        <button id="agendarBtn" onclick="agendarCorrida()">Agendar Corrida</button>
+    </div>
+
+    <!-- Código para o Google Maps -->
+    <div id="maps">
+        <!-- Integre o código do Google Maps conforme necessário -->
+        <h1>Google Maps para Chamar Motorista</h1>
+    </div>
+
+    <!-- Código para o botão do WhatsApp -->
+    <div id="whatsapp">
+        <!-- Integre o botão do WhatsApp conforme necessário -->
+        <h1>Botão do WhatsApp para Venha me Buscar</h1>
+    </div>
+
+    <script>
+        function mostrarSecao(secao) {
+            document.getElementById('calendar').style.display = 'none';
+            document.getElementById('agendamento').style.display = 'none';
+            document.getElementById('maps').style.display = 'none';
+            document.getElementById('whatsapp').style.display = 'none';
+
+            document.getElementById(secao).style.display = 'block';
+        }
+
+        function agendarCorrida() {
+            // Lógica de agendamento aqui
+
+            // Simula uma notificação
+            alert('Agendamento de corrida concluído com sucesso.');
+        }
+    </script>
+</body>
+</html>
